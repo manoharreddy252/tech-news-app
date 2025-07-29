@@ -1,0 +1,60 @@
+.App {
+  min-height: 100vh;
+}
+
+.login-page, .register-page {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.dashboard {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.badge {
+  font-size: 0.75rem;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.spinner-border {
+  width: 2rem;
+  height: 2rem;
+}
+
+.text-primary {
+  color: #667eea !important;
+}
+
+.btn-primary {
+  background-color: #667eea;
+  border-color: #667eea;
+}
+
+.btn-primary:hover {
+  background-color: #5a6fd8;
+  border-color: #5a6fd8;
+}
+
+.bg-primary {
+  background-color: #667eea !important;
+}
