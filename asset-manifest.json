@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tech-news-app/static/css/main.f549e5bc.css",
+    "main.js": "/tech-news-app/static/js/main.f2634832.js",
+    "static/js/453.670e15c7.chunk.js": "/tech-news-app/static/js/453.670e15c7.chunk.js",
+    "index.html": "/tech-news-app/index.html",
+    "main.f549e5bc.css.map": "/tech-news-app/static/css/main.f549e5bc.css.map",
+    "main.f2634832.js.map": "/tech-news-app/static/js/main.f2634832.js.map",
+    "453.670e15c7.chunk.js.map": "/tech-news-app/static/js/453.670e15c7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f549e5bc.css",
+    "static/js/main.f2634832.js"
+  ]
+}
