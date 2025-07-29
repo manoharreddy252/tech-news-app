@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Button, Navbar, Nav, Alert, Spinner } from 'react-bootstrap';
-import { useAuth } from '../context/AuthContext';
-import { newsAPI } from '../services/api';
+import { Container, Row, Col, Card, Button, Navbar, Alert, Spinner } from 'react-bootstrap';
 
 interface NewsArticle {
   id: number;
@@ -17,16 +15,12 @@ const Dashboard: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState('');
-  const { user, logout } = useAuth();
+  // Removed authentication
 
   const fetchNews = async () => {
     try {
       setError('');
-      const response = await newsAPI.getNews();
-      setNews(response.data.articles || []);
-    } catch (err: any) {
-      setError('Failed to fetch news. Using demo data.');
-      // Set demo data if API fails
+      // Set demo data directly
       setNews([
         {
           id: 1,
@@ -76,14 +70,8 @@ const Dashboard: React.FC = () => {
 
   const handleRefresh = async () => {
     setRefreshing(true);
-    try {
-      await newsAPI.refreshNews();
-      await fetchNews();
-    } catch (err) {
-      setError('Failed to refresh news');
-    } finally {
-      setRefreshing(false);
-    }
+    await fetchNews();
+    setRefreshing(false);
   };
 
   useEffect(() => {
@@ -105,15 +93,9 @@ const Dashboard: React.FC = () => {
       <Navbar bg="primary" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand>Tech News Portal</Navbar.Brand>
-          <Navbar.Toggle />
-          <Navbar.Collapse className="justify-content-end">
-            <Nav>
-              <Nav.Link className="text-white">Welcome, {user?.username}</Nav.Link>
-              <Button variant="outline-light" size="sm" onClick={logout}>
-                Logout
-              </Button>
-            </Nav>
-          </Navbar.Collapse>
+          <Navbar.Text className="ms-auto text-white">
+            Daily Tech News Updates
+          </Navbar.Text>
         </Container>
       </Navbar>
 

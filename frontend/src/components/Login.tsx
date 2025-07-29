@@ -17,15 +17,16 @@ const Login: React.FC = () => {
     setLoading(true);
     setError('');
 
-    try {
-      const response = await authAPI.login(username, password);
-      login(response.data.access, response.data.user);
+    // Mock authentication for demo
+    if (username === 'demo' && password === 'demo123') {
+      const mockUser = { id: 1, username: 'demo', email: 'demo@example.com' };
+      const mockToken = 'mock-jwt-token-12345';
+      login(mockToken, mockUser);
       navigate('/dashboard');
-    } catch (err: any) {
-      setError(err.response?.data?.error || 'Login failed');
-    } finally {
-      setLoading(false);
+    } else {
+      setError('Invalid credentials. Use demo/demo123');
     }
+    setLoading(false);
   };
 
   // Demo login function

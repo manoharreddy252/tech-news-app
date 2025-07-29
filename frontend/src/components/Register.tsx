@@ -25,15 +25,10 @@ const Register: React.FC = () => {
       return;
     }
 
-    try {
-      await authAPI.register(username, email, password);
-      setSuccess('Registration successful! Please login.');
-      setTimeout(() => navigate('/login'), 2000);
-    } catch (err: any) {
-      setError(err.response?.data?.error || 'Registration failed');
-    } finally {
-      setLoading(false);
-    }
+    // Mock registration for demo
+    setSuccess('Registration successful! Please login with demo/demo123');
+    setTimeout(() => navigate('/login'), 2000);
+    setLoading(false);
   };
 
   return (
